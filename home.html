@@ -19,6 +19,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
         <img src="imgpod/logo.png" width="180px" alt="logo">
     </nav>
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div  id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div style="height: 90vh;" class="carousel-item active">
                 <img class="d-block w-100" src="imgpod/TimFerrissShoot-tinyfied.jpg" alt="First slide">
@@ -52,25 +53,30 @@
     <h2 style="margin-top: 40px; font-size: 40px;">More Podcasts?</h2>
     <h3>Popular Podcasts :</h3>
 
-    <div class="podcasts flex">
-        <a href="#">
-            <img src="imgpod/podcast1.jpg" width="375px" alt="podcast"></a>
-        <a href="#">
+    <div  class="podcasts flex">
+        <a href="#"><img src="imgpod/podcast1.jpg" width="375px" alt="podcast"></a>
+        <a href="impaulsive.html">
             <img src="imgpod/podcast2.jfif" width="375px" alt="podcast"></a>
         <a href="#">
             <img src="imgpod/podcast3.jpg" width="375px" alt="podcast"></a>
 
     </div>
+    <div class="podcasts flex" id="resu">
 
-    <form id="msform">
+    </div>
+    
+
+    <form id="msform">  
   
         <fieldset>
           <h2 class="fs-title">Add New Podcast</h2>
           <h3 class="fs-subtitle">Fill The Inputs</h3>
-          <input type="text" name="URL" placeholder="Podcast logo URL" />
-          <input type="name" name="name" placeholder="Podcast Name" />
-          <input type="namepod" name="namepod" placeholder="Podcaster's Name" />
-          <input type="button" name="Add" class="next action-button" value="Add" />
+          <input id="value" type="url" name="URL" placeholder="Podcast logo URL" />
+          <input id="clr" type="name" name="name" placeholder="Podcast Name" />
+          <input id="clb" type="namepod" name="namepod" placeholder="Podcaster's Name" />
+          <input onclick="addlast()" type="button" name="Add" class="next action-button" value="Add" />
+          <input onclick="clearall()" type="button" name="Clear" class="next action-button" value="Clear" />
+
         </fieldset>
         
       </form>
