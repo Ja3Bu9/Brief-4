@@ -65,7 +65,7 @@ class LinkedList {
     // var s2 = parseInt(aud.duration % 60);
     // var m2 = parseInt((aud.duration / 60) % 60);
     // var h2 = parseInt(((aud.duration / 60) / 60) % 60);
-    return '<h4>' + this.showtitle + '</h4><div class="coll"><audio id="player" onloadedmetadata="mDur()" ontimeupdate="mPlay()" src="' + this.show + '"></audio><input class="e-range" id="seek" type="range" name="rng" min="0" step="0.25" value="0" onchange="mSet()" style="width: 248px"><ul class="timee"><li><span id="duration">00:00:00</span></li><li><i>/</i></li><li><span id="dur2"></span></li></ul></div>';
+    return '<h4>' + this.showtitle + '</h4><div class="coll"><audio id="player" onloadedmetadata="mDur()" ontimeupdate="mPlay()" src="'+this.show+'"></audio><input class="e-range" id="seek" type="range" name="rng" min="0" step="0.25" value="0" onchange="mSet()" style="width: 248px"><ul class="timee"><li><span id="duration">00:00:00</span></li><li><i>/</i></li><li><span id="dur2"></span></li></ul></div>';
   }
 
 
@@ -77,13 +77,11 @@ class LinkedList {
   }
 
   printListpod() {
-    if (this.current){
-      return '<h4>'+this.head.namepod+'</h4><div class="coll"><audio id="player" onloadedmetadata="mDur()" ontimeupdate="mPlay()" src="' + this.head.data + '"></audio><input class="e-range" id="seek" type="range" name="rng" min="0" step="0.25" value="0" onchange="mSet()" style="width: 248px"><ul class="timee"><li><span id="duration">00:00:00</span></li><li><i>/</i></li><li><span id="dur2"></span></li></ul></div>';
-    }
+   
+      return '<h4>'+this.head.namepod+'</h4><div class="coll"><audio id="player" onloadedmetadata="mDur()" ontimeupdate="mPlay()" src="'+this.head.data+'"></audio><input class="e-range" id="seek" type="range" name="rng" min="0" step="0.25" value="0" onchange="mSet()" style="width: 248px"><ul class="timee"><li><span id="duration">00:00:00</span></li><li><i>/</i></li><li><span id="dur2"></span></li></ul></div>';
+    
 
-    else {
-      return "No Data";
-  }
+    
 }
 
 }
