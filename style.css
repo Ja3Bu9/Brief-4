@@ -334,6 +334,49 @@ svg:hover{
 	-webkit-box-shadow: 0px 0px 25px black;
     box-shadow: 0px 0px 25px black;
 }
+
+@media (max-width : 500px){
+	.playpod{
+		width: 375px;
+
+	}
+	
+	.playpod .coll ul{
+		position: relative;
+		left: -20px;
+		margin-top: 6px;
+		font-family: serif;
+		
+	}
+	
+	.coll1{
+		width: 74%;
+
+	}
+	.descr h1{
+		font-size: 26px !important;
+		margin-top: 90px !important;
+		margin-bottom: 20px !important;
+	}
+	.descr .flex img{
+		width: 100px !important;
+		margin-left: 30px;
+	}
+	.descr .flex p{
+		font-size: 12px !important;
+		margin: 20px !important;
+	}
+	.descr .infos{
+		font-size: 16px !important;
+margin-left: 5% !important;
+	margin-right: 5% !important;
+	margin-top: 5% !important;
+	}
+	.navbar{
+		height: 40vh;
+	}
+}
+
 .coll{
 	display: flex;	
 }
@@ -415,3 +458,5 @@ svg:hover{
 
 
 }
+
+
