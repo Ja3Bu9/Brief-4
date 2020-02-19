@@ -1,0 +1,143 @@
+#tof{
+    background-image: url('h3.JPG');
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+  }
+
+  #play{
+
+ margin-bottom: 4%;;
+  }
+
+  #play{
+	margin-bottom: 15%;
+  }
+
+  //    start cont
+.count{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+}
+
+.imagescount{
+
+    background-size: cover;
+    height: 300px;
+    width: 200px;
+    height: auto;
+
+}
+
+.text-ourpodcasts{
+    color: black;
+    font-size: 40px;
+}
+
+
+.the-3-PODCASTS{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color:#43086d ;
+    text-align: center;
+    }
+   div {
+        flex-basis: 33%;
+    }
+}
+
+
+.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+  
+}
+
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=button] {
+    width: 200px;
+    background-color: #43086d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=button]:hover {
+    background-color: #1f0333;
+  }
+
+  .form-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      label {
+          color: #43086d;
+      }
+  }
+  
+  .form {
+    border-radius: 5px;
+    border: solid 1px  #43086d ;
+    width: 50%;
+    padding: 20px;
+    margin-top: -1%;
+    
+  }
+
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    resize: none;
+    margin: 8px 0;
+    
+  }
+
+  .podcast-container{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      h1{
+          color: #43086d;
+          font-size: 80px;
+  
+      }
+      div{
+          display: flex;
+          color: black;
+          padding: 50px;
+          flex-wrap: wrap;
+          div{
+              font-size: 20px;
+              line-height: 1.6;
+          }
+      }
+  
+  }
+  
