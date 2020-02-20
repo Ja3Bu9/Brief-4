@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="link.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
+    
+</head>
+<body>
+    <nav class="header flex">
+        <img src="imgpod/logo.png" width="180px" alt="logo">
+    </nav>
+    <div classe="description">
+        <div class="imge"></div>
+        <div id="lblassa" class="arrows">
+            <i onclick="prev()" class="fa fa-chevron-left" style="font-size:36px">d</i>
+            <audio controls>
+           <source id="audio" src="audio1.mp3"></audio>
+            
+            <i onclick="next()" class="fa fa-chevron-right" style="font-size:36px">d</i>
+        </div>
+        <p id="episodename">1</p>
+     </div>
+     <div class="des">
+        <div><img src="imgpod/podcast1.jpg"></div>
+        <div class="About">
+            <h1>About The Tim Ferriss Show</h1>
+            <p>The Tim Ferriss Show is often the #1 business podcast on all of Apple Podcasts,
+                and it’s been ranked #1out of 500,000+
+                 podcasts on many occasions.It is the first business/interview
+                podcast to pass 100,000,000 downloads, and it has been selected as “Best of” 
+                Apple Podcasts for three years running,and readers of Fortune Magazine‘s Term Sheet 
+                recently selected The Tim Ferriss Show as their top business podcast.</p>
+        </div>
+    </div>
+    <div class="insc">
+            <div><img src="imgpod/images.jfif" alt=""></div>
+        <div class="secendly">
+            <h1>Top 10 Podcast Episodes of The Tim Ferriss Show</h1>
+            <p>My top-10 most popular episodes of The Tim Ferriss Show, as of September 1, 2017, are below.
+                But achtung! I didn’t rank episodes in descending order of total downloads. Due to rapid growth, there would be a misleading recency bias — in other words, a newer decent episode could be “more popular” than an older blockbuster episode that was 3x the average at the time. To correct for this, we used a better methodology, and I owe special thanks to my brother for the help.*</p>
+        </div>
+    </div>
+    <form id="msform">  
+  
+        <fieldset>
+          <h2 class="fs-title">Add New Episode</h2>
+          <h3 class="fs-subtitle">Fill The Inputs</h3>
+          <input id="epnum" type="url" name="URL" placeholder="Ep. URL" />
+          <input id="epname" type="name" name="name" placeholder="Ep. Name" />
+          <!-- <input id="clb" type="namepod" name="namepod" placeholder="Podcaster's Name" /> -->
+          <input onclick="addmusic()" type="button" name="Add" class="next action-button" value="Add" />
+          <input onclick="clearall()" type="button" name="Clear" class="next action-button" value="Clear" />
+    
+        </fieldset>
+        
+    </form>
+   
+  
+
+
+
+
+
+<script src="link.js"></script>
+
+
+
+    
+    
+</body>
+</html>
