@@ -1,7 +1,8 @@
 class Node {
-  constructor(data,namepod, next, back, ) {
+  constructor(data,namepod,descrpod, next, back, ) {
     this.data = data;
     this.namepod = namepod;
+    this.descrpod = descrpod;
     this.next = next || null;
     this.back = back || null;
 
@@ -17,13 +18,16 @@ class LinkedList {
     this.show = this.pod[0];
     this.title = ['IMPAULSIVE EP. 156', 'IMPAULSIVE EP. 157']
     this.showtitle = this.title[0]
+    this.descr = ['In this episode, Mike becomes the second person to walk off the set after a heated fight between the boys. Also, Logan addresses the girl who spit on him at Berkeley, the Antonio Brown diss track, and the Kobe Bryant tragedy.','2In this episode, Mike becomes the second person to walk off the set after a heated fight between the boys. Also, Logan addresses the girl who spit on him at Berkeley, the Antonio Brown diss track, and the Kobe Bryant tragedy.']
+    this.showdescr = this.descr[0];
   }
 
-  insertFirst(data,name) {
-    this.head = new Node(data,name, this.head);
+  insertFirst(data,name,descr) {
+    this.head = new Node(data,name,descr, this.head);
     this.current = this.head;
     this.pod.push(this.head.data)
     this.title.push(this.head.namepod)
+    this.descr.push(this.head.descrpod)
     this.size++;
   }
 
@@ -35,6 +39,7 @@ class LinkedList {
     }
     this.show = this.pod[this.size];
     this.showtitle = this.title[this.size];
+    this.showdescr = this.descr[this.size];
 
 
   }
@@ -48,6 +53,7 @@ class LinkedList {
 
     this.show = this.pod[this.size];
     this.showtitle = this.title[this.size];
+    this.showdescr = this.descr[this.size];
 
 
   }
@@ -76,13 +82,19 @@ class LinkedList {
       return "No Data";
   }
 
-  printListpod() {
+//   printListpod() {
    
-      return '<h4>'+this.head.namepod+'</h4><div class="coll"><audio id="player" onloadedmetadata="mDur()" ontimeupdate="mPlay()" src="'+this.head.data+'"></audio><input class="e-range" id="seek" type="range" name="rng" min="0" step="0.25" value="0" onchange="mSet()" style="width: 248px"><ul class="timee"><li><span id="duration">00:00:00</span></li><li><i>/</i></li><li><span id="dur2"></span></li></ul></div>';
+//       return '<h4>'+this.head.namepod+'</h4><div class="coll"><audio id="player" onloadedmetadata="mDur()" ontimeupdate="mPlay()" src="'+this.head.data+'"></audio><input class="e-range" id="seek" type="range" name="rng" min="0" step="0.25" value="0" onchange="mSet()" style="width: 248px"><ul class="timee"><li><span id="duration">00:00:00</span></li><li><i>/</i></li><li><span id="dur2"></span></li></ul></div>';
     
 
     
+// }
+printdescr(){
+  return this.showdescr
 }
+// printListdescr(){
+//   return this.head.descrpod
+// }
 
 }
 
@@ -102,15 +114,17 @@ function addlast() {
 }
 
 function addpodcast(){
-  list.insertFirst(document.getElementById("epnum").value,document.getElementById("epname").value);
+  list.insertFirst(document.getElementById("epnum").value,document.getElementById("epname").value,document.getElementById("descr").value);
   let aud = document.getElementById('player')
   let s2 = parseInt(aud.duration % 60);
   let m2 = parseInt((aud.duration / 60) % 60);
   let h2 = parseInt(((aud.duration / 60) / 60) % 60);
-  document.getElementById('podresult').innerHTML = list.printListpod();
+  // document.getElementById('podresult').innerHTML = list.printListpod();
   
 dur2.innerHTML = pad2(h2) + ':' + pad2(m2) + ':' + pad2(s2);
-  
+document.getElementById('epnum').value = '';
+document.getElementById('epname').value = '';
+document.getElementById('descr').value = '';
 }
 
 function Nextpodcast() {
@@ -122,7 +136,10 @@ function Nextpodcast() {
   let h2 = parseInt(((aud.duration / 60) / 60) % 60);
 
   document.getElementById('podresult').innerHTML = list.printpod();
+  document.getElementById('showdescr').innerHTML = list.printdescr();
+
   dur2.innerHTML = pad2(h2) + ':' + pad2(m2) + ':' + pad2(s2);
+
 
 }
 
@@ -136,6 +153,8 @@ function Backpodcast() {
   let h2 = parseInt(((aud.duration / 60) / 60) % 60);
 
   document.getElementById('podresult').innerHTML = list.printpod();
+  document.getElementById('showdescr').innerHTML = list.printdescr();
+
   dur2.innerHTML = pad2(h2) + ':' + pad2(m2) + ':' + pad2(s2);
 
 }

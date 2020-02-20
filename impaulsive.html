@@ -91,11 +91,12 @@
     <div class="befordescr">
    <div class="descr">
        <h1>Impaulsive with Logan Paul</h1>
-        <div class="flex">
+        <div  class="flex">
             <img  src="imgpod/podcast2.jfif" alt="impaulsive">
-            <p>The world's greatest, most thought-provoking, mentally stimulating podcast in the history of mankind... hosted by a bunch of idiots.</p>
+            <p id="showdescr">In this episode, Mike becomes the second person to walk off the set after a heated fight between the boys. Also, Logan addresses the girl who spit on him at Berkeley, the Antonio Brown diss track, and the Kobe Bryant tragedy.
+            </p>
         </div>
-        <p class="infos">Created By Logan Alexander Paul (born April 1, 1995) is an American YouTuber, internet personality and actor known for his YouTube video content. As well as posting on his own YouTube channel, Paul has run the Impaulsive podcast since November 2018, which currently has over 1.8 million followers.Paul gained a following in 2013, posting sketches on the video-sharing application Vine. He registered his YouTube channel, TheOfficialLoganPaul, on October 18, 2013, where he started posting regularly following the closure of the Vine app. He later created the Logan Paul Vlogs channel on August 29, 2015, which has since become his most subscribed YouTube channel. As of January 2020, the channel has received over 20 million subscribers and 4.8 billion views, ranking as the 54th subscribed in the United States, and placing Paul among the top 140 subscribed channels on the platform</p>
+        <p  class="infos">The world's greatest, most thought-provoking, mentally stimulating podcast in the history of mankind... hosted by a bunch of idiots. Created By Logan Alexander Paul (born April 1, 1995) is an American YouTuber, internet personality and actor known for his YouTube video content. As well as posting on his own YouTube channel, Paul has run the Impaulsive podcast since November 2018, which currently has over 1.8 million followers.Paul gained a following in 2013, posting sketches on the video-sharing application Vine. He registered his YouTube channel, TheOfficialLoganPaul, on October 18, 2013, where he started posting regularly following the closure of the Vine app. He later created the Logan Paul Vlogs channel on August 29, 2015, which has since become his most subscribed YouTube channel. As of January 2020, the channel has received over 20 million subscribers and 4.8 billion views, ranking as the 54th subscribed in the United States, and placing Paul among the top 140 subscribed channels on the platform</p>
    </div>
 </div>
    <form id="msform">  
@@ -105,7 +106,7 @@
       <h3 class="fs-subtitle">Fill The Inputs</h3>
       <input id="epnum" type="url" name="URL" placeholder="Ep. URL" />
       <input id="epname" type="name" name="name" placeholder="Ep. Name" />
-      <!-- <input id="clb" type="namepod" name="namepod" placeholder="Podcaster's Name" /> -->
+      <input id="descr" type="text" name="descrpod" placeholder="Ep. Description" />
       <input onclick="addpodcast()" type="button" name="Add" class="next action-button" value="Add" />
       <input onclick="clearall()" type="button" name="Clear" class="next action-button" value="Clear" />
 
@@ -116,7 +117,8 @@
         <img src="imgpod/logo.png" width="180px" alt="logo">
         <span>Copyright 2020</span>
     </nav>
-    
+    <style>
+    </style>
 </body>
 
 </html>
