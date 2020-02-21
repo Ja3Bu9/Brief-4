@@ -27,6 +27,13 @@ class LinkedList {
     this.showtitle2 = this.title2[0]
     this.descr2 = ['H3H3Productions is a YouTube channel produced by husband and wife duo Ethan Edward Klein (born June 25, 1985) and Hila Klein,The name h3h3 was initially supposed to be "HEHE" due to the couple\'s initials, but because the username was taken, they opted for h3h3.','On this episode of the H3 Podcast we interview Papa John. Yep. Papa bless.']
     this.showdescr2 = this.descr2[0];
+
+    this.pod3 = ['https://rss.art19.com/episodes/62269ad7-892f-40da-baec-57213d62d370.mp3', 'https://rss.art19.com/episodes/d1a9301a-2f69-48ff-805e-1f8e427582da.mp3'];
+    this.show3 = this.pod3[0];
+    this.title3 = ['Tim Ferriss Show Ep. 344', 'Tim Ferriss Show Ep. 345']
+    this.showtitle3 = this.title3[0]
+    this.descr3 = ['Richard TurnerI am very, very excited to introduce this interview, as I\'ve been wanting to meet today\'s guest, Richard Turner, for almost two years now. I first came across Richard Turner (richardturner52.com, youtube.com/richardturner52) in the documentary Dealt, directed by Luke Korem.I can\'t remember the last time I finished a documentary, only to want to watch it again immediately afterward.','"We chase extraordinary moments instead of being grateful for ordinary moments until hard shit happens. And then in the face of really hard stuff — illness, death, loss — the only thing we\'re begging for is a normal moment." — Brené BrownDr. Brené Brown (@BreneBrown) is a research professor at the University of Houston where she holds the Huffington Foundation – Brené Brown Endowed Chair at The Graduate College of Social Work. Brené is also a visiting professor in management at The University of Texas at Austin McCombs School of Business.']
+    this.showdescr3 = this.descr3[0];
   }
 
   insertFirst(data,name,descr) {
@@ -39,6 +46,10 @@ class LinkedList {
     this.pod2.push(this.head.data)
     this.title2.push(this.head.namepod)
     this.descr2.push(this.head.descrpod)
+
+    this.pod3.push(this.head.data)
+    this.title3.push(this.head.namepod)
+    this.descr3.push(this.head.descrpod)
     this.size++;
   }
 
@@ -68,6 +79,18 @@ class LinkedList {
     this.showdescr2 = this.descr2[this.size];
   }
 
+  Next3() {
+    if (this.size === this.pod3.length - 1) {
+      this.size = 0;
+    } else {
+      this.size++;
+    }
+    
+    this.show3 = this.pod3[this.size];
+    this.showtitle3 = this.title3[this.size];
+    this.showdescr3 = this.descr3[this.size];
+  }
+
   moveBack() {
     if (this.size === 0) {
       this.size = this.pod.length - 1;
@@ -93,6 +116,19 @@ class LinkedList {
 
   }
 
+  moveBack3() {
+    if (this.size === 0) {
+      this.size = this.pod3.length - 1;
+    } else {
+      this.size--;
+    }
+    this.show3 = this.pod3[this.size];
+    this.showtitle3 = this.title3[this.size];
+    this.showdescr3 = this.descr3[this.size];
+
+
+  }
+
 
 
   clearList() {
@@ -108,6 +144,10 @@ class LinkedList {
   printpod2() {
   
     return '<h4>' + this.showtitle2 + '</h4><div class="coll"><audio id="player" onloadedmetadata="mDur()" ontimeupdate="mPlay()" src="'+this.show2+'"></audio><input class="e-range" id="seek" type="range" name="rng" min="0" step="0.25" value="0" onchange="mSet()" style="width: 248px"><ul class="timee"><li><span id="duration">00:00:00</span></li><li><i>/</i></li><li><span id="dur2"></span></li></ul></div>';
+  }
+  printpod3() {
+  
+    return '<h4>' + this.showtitle3 + '</h4><div class="coll"><audio id="player" onloadedmetadata="mDur()" ontimeupdate="mPlay()" src="'+this.show3+'"></audio><input class="e-range" id="seek" type="range" name="rng" min="0" step="0.25" value="0" onchange="mSet()" style="width: 248px"><ul class="timee"><li><span id="duration">00:00:00</span></li><li><i>/</i></li><li><span id="dur2"></span></li></ul></div>';
   }
 
 
@@ -127,9 +167,12 @@ printdescr(){
   return this.showdescr
 }
 printdescr2(){
-  console.log(this.showdescr2)
 
   return this.showdescr2
+}
+printdescr3(){
+
+  return this.showdescr3
 }
 
 
@@ -175,8 +218,7 @@ function Nextpodcast() {
   document.getElementById('podresult').innerHTML = list.printpod();
   document.getElementById('showdescr').innerHTML = list.printdescr();
 
-  document.getElementById('podresult2').innerHTML = list.printpod2();
-  document.getElementById('showdescr2').innerHTML = list.printdescr2();
+
 
   dur2.innerHTML = pad2(h2) + ':' + pad2(m2) + ':' + pad2(s2);
 
@@ -192,6 +234,22 @@ function Nextpodcast2() {
 
   document.getElementById('podresult2').innerHTML = list.printpod2();
   document.getElementById('showdescr2').innerHTML = list.printdescr2();
+
+  dur2.innerHTML = pad2(h2) + ':' + pad2(m2) + ':' + pad2(s2);
+
+
+}
+
+function Nextpodcast3() {
+  list.Next3();
+
+  let aud = document.getElementById('player')
+  let s2 = parseInt(aud.duration % 60);
+  let m2 = parseInt((aud.duration / 60) % 60);
+  let h2 = parseInt(((aud.duration / 60) / 60) % 60);
+
+  document.getElementById('podresult2').innerHTML = list.printpod3();
+  document.getElementById('showdescr2').innerHTML = list.printdescr3();
 
   dur2.innerHTML = pad2(h2) + ':' + pad2(m2) + ':' + pad2(s2);
 
@@ -225,6 +283,21 @@ function Backpodcast2() {
 
   document.getElementById('podresult2').innerHTML = list.printpod2();
   document.getElementById('showdescr2').innerHTML = list.printdescr2();
+
+  dur2.innerHTML = pad2(h2) + ':' + pad2(m2) + ':' + pad2(s2);
+
+}
+function Backpodcast3() {
+  list.moveBack3();
+  let aud = document.getElementById('player')
+  let s2 = parseInt(aud.duration % 60);
+  let m2 = parseInt((aud.duration / 60) % 60);
+  let h2 = parseInt(((aud.duration / 60) / 60) % 60);
+
+
+
+  document.getElementById('podresult2').innerHTML = list.printpod3();
+  document.getElementById('showdescr2').innerHTML = list.printdescr3();
 
   dur2.innerHTML = pad2(h2) + ':' + pad2(m2) + ':' + pad2(s2);
 
